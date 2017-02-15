@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>
+    Prognoos Data Visual
+</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h3 class="text-muted">Visualiza&ccedil;&atilde;o dos dados</h3>
+      </div>
+      <hr/>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ANO-MES</th>
+      <th>Novos</th>
+      <th>Ativos</th>
+      <th>Cancelados</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for year in stats %}
+ <tr>
+	<th scope="row">{{ year }}</th>
+	{%for values in stats[year] %}
+      <td>{{ stats[year][values] }}</td>
+	{% endfor %}
+ </tr>
+{% endfor %}
+  </tbody>
+</table>
+</body>
+</html>
